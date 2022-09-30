@@ -11,5 +11,12 @@ app.use(express.json()) //Pasar a json los datos para interpretarlos y pasarlo a
 app.use(indexRoutes)  //Verificamos la conexion a la BBDD
 app.use('/api',employeesRoutes)  
 
+//Si no encuentra las rutas anteriores
+app.use((req, res, next) =>{
+  res.status(404).json({
+    message: 'endpoint not found'
+  })
+})
+
 app.listen(3000);
-console.log('Server running on port 3000 xd');
+console.log('Server running on port 3000 xd'); 

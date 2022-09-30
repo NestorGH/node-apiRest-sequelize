@@ -4,7 +4,7 @@ import {createPool} from 'mysql2/promise' //Usando promesas con el mysql para lo
 export const pool = createPool({
   host: 'localhost',
   user: 'root',
-  password: 'yonaciel7',
+  password: 'mysql',
   port: 3306,
   database: 'companydb'
 })
