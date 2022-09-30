@@ -1,10 +1,11 @@
 import { Router } from 'express'
+import { createEmployees, deleteEmployees, getEmployees, updateEmployees } from '../controllers/employees.controller.js'
 
 const router = Router()
 
-router.get('/employees', (req, res) => res.send('Get employees'))
-router.post('/employees', (req, res) => res.send('Post employees'))
-router.put('/employees', (req, res) => res.send('Put/Update employees'))
-router.delete('/employees', (req, res) => res.send('Delete employees'))
+router.get('/employees', getEmployees)
+router.post('/employees', createEmployees)
+router.put('/employees', updateEmployees)
+router.delete('/employees', deleteEmployees)
 
 export default router

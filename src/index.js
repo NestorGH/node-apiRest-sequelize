@@ -5,8 +5,11 @@ import indexRoutes from './routes/index.routes.js'
 
 const app = express();
 
-app.use(indexRoutes)
-app.use(employeesRoutes)
+app.use(express.json()) //Pasar a json los datos para interpretarlos y pasarlo a las rutas
+
+//Las rutas
+app.use(indexRoutes)  //Verificamos la conexion a la BBDD
+app.use('/api',employeesRoutes)  
 
 app.listen(3000);
 console.log('Server running on port 3000 xd');
