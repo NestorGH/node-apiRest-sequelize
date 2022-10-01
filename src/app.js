@@ -9,7 +9,7 @@ app.use(express.json()) //Pasar a json los datos para interpretarlos y pasarlo a
 
 //Las rutas
 app.use(indexRoutes)  //Verificamos la conexion a la BBDD
-app.use('/api',employeesRoutes)  
+app.use(employeesRoutes)  
 
 //Si no encuentra las rutas anteriores
 app.use((req, res, next) =>{
