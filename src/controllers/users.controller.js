@@ -115,7 +115,6 @@ export const getUsersTodos = async (req, res) => {
 export const getTodoId = async (req, res) => {
 
   try {
-    // console.log(req.params.id) //Guarda los parametros q vengan a traves del url(req), por ejemplo el /:id
     const [rows] = await pool.query('select td.id_todo, td.title, tsk.completed,tsk.id_task, us.id_user from users AS us JOIN todos as td on td.id_user = us.id_user JOIN tasks as tsk on tsk.id_user = td.id_user WHERE td.id_todo = ?', [req.params.id])
 
     if (rows.length <= 0) return res.status(404).json({
