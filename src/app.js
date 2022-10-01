@@ -1,6 +1,6 @@
 // const express = require('express');
 import express from 'express';  //agregar el type: module en el package.json
-import employeesRoutes from './routes/employees.routes.js'
+import employeesRoutes from './routes/users.routes.js'
 import indexRoutes from './routes/index.routes.js'
 
 const app = express();
