@@ -1,13 +1,14 @@
 import { Router } from 'express'
-import { createEmployees, deleteEmployees, getEmployee, getEmployees, updateEmployees } from '../controllers/employees.controller.js'
+// import { createEmployees, deleteEmployees, getEmployee, getEmployees, getUsers, updateEmployees } from '../controllers/employees.controller.js'
+import { createUsers, deleteUsers, getUser, getUsers, updateUsers } from '../controllers/employees.controller.js'
 
 const router = Router()
 
-router.get('/employees', getEmployees)
-router.get('/employees/:id', getEmployee)
+router.get('/users', getUsers)
+router.get('/users/:id', getUser)
 
-router.post('/employees', createEmployees)
-router.patch('/employees/:id', updateEmployees)
-router.delete('/employees/:id', deleteEmployees)
+router.post('/users', createUsers)
+router.patch('/users/:id', updateUsers)
+router.delete('/users/:id', deleteUsers)
 
 export default router
