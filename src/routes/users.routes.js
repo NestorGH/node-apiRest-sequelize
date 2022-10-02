@@ -1,6 +1,5 @@
 import { Router } from 'express'
-// import { createEmployees, deleteEmployees, getEmployee, getEmployees, getUsers, updateEmployees } from '../controllers/employees.controller.js'
-import { createUsers, deleteUsers, getTodoId, getUser, getUsers, getUsersTodos, updateUsers } from '../controllers/users.controller.js'
+import { createTask, createUsers, deleteUsers, getTodoId, getUser, getUsers, getUsersTodos, updateUsers } from '../controllers/users.controller.js'
 
 const router = Router()
 
@@ -13,6 +12,8 @@ router.patch('/users/:id', updateUsers)
 router.delete('/users/:id', deleteUsers)
 
 router.get('/todos/:id',getTodoId )
+router.post('/todos/:id/task', createTask)
+
 
 
 export default router
