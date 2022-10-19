@@ -2,7 +2,7 @@
 import express from 'express';  //agregar el type: module en el package.json
 import userRoutes from './routes/users.routes.js'
 import todoRoutes from './routes/todos.routes.js'
-// import indexRoutes from './routes/index.routes.js'
+import taskRoutes from './routes/task.routes.js'
 
 const app = express();
 
@@ -12,14 +12,15 @@ app.use(express.json()) //Pasar a json los datos para interpretarlos y pasarlo a
 //Las rutas
 app.use(userRoutes)
 app.use(todoRoutes)  
+app.use(taskRoutes)
 // app.use(indexRoutes)  //Verificamos la conexion a la BBDD
 
 
-// //Si no encuentra las rutas anteriores
-// app.use((req, res, next) =>{
-//   res.status(404).json({
-//     message: 'endpoint not found'
-//   })
-// })
+//Si no encuentra las rutas anteriores
+app.use((req, res, next) =>{
+  res.status(404).json({
+    message: 'endpoint not found'
+  })
+})
 
 export default app;

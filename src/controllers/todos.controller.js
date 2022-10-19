@@ -48,11 +48,9 @@ export const createTodo = async (req, res) => {
 export const updateTodo = async (req, res) => {
   try {
     const { id } = req.params
-    const { firstName, lastName, email } = req.body
-
     const todo = await Todos.findByPk(id)
-    todo.set(req.body);
 
+    todo.set(req.body);
     await todo.save() //Guardamos en la BBDD
     res.json(todo)
 
