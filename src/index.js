@@ -8,7 +8,7 @@ import { sequelize } from './db/db.js';
 
 async function main() {
   try {
-    await sequelize.sync({alter: true}) //Recreamos la tablas
+    await sequelize.sync({force: false}) //Recreamos la tablas
     app.listen(PORT);
     console.log('Server running on port', PORT);
   } catch (error) {

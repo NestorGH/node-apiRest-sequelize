@@ -9,6 +9,5 @@ router.get('/todos/:id', getTodo)
 router.post('/todos',createTodo)
 router.patch('/todos/:id', updateTodo)
 router.delete('/todos/:id',deleteTodo)
-// router.post('/todos/:id/task', createTask)
 
 export default router
