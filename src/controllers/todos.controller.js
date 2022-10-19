@@ -76,27 +76,3 @@ export const deleteTodo = async (req, res) => {
   }
 }
 
-
-// //  POST /todos/:id/task
-// export const createTask = async (req, res) => {
-//   console.log(req.body) //El cuerpo/objeto de la peticion
-//   const { title, completed, id_todo, id_user } = req.body
-
-//   try {
-//     const [rows] = await pool.query('INSERT INTO tasks (title,completed,id_todo,id_user) VALUES (?, ?, ?, ?)', [title, completed, id_todo, id_user])
-//     // console.log(rows)
-//     res.send({  //Mandamos la respuesta
-//       // id: rows.insertId,
-//       id: rows.insertId,
-//       title,
-//       completed,
-//       id_todo,
-//       id_user
-//     })
-
-//   } catch (error) {
-//     return res.status(500).json({
-//       message: 'Something goes wrong'
-//     })
-//   }
-// }
