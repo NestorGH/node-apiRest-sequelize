@@ -2,13 +2,13 @@ import app from './app.js'
 import { PORT } from './config.js'
 import { sequelize } from './db/db.js';
 
-import './models/Users.js'
-import './models/Todos.js'
-import './models/Tasks.js'
+// import './models/Users.js'
+// import './models/Todos.js'
+// import './models/Tasks.js'
 
 async function main() {
   try {
-    await sequelize.sync({force: true}) //Recreamos la tablas
+    await sequelize.sync({force: false}) //Recreamos la tablas
     app.listen(PORT);
     console.log('Server running on port', PORT);
   } catch (error) {
