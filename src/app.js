@@ -5,6 +5,7 @@ import express from 'express';  //agregar el type: module en el package.json
 
 const app = express();
 
+//Middlewares
 // app.use(express.json()) //Pasar a json los datos para interpretarlos y pasarlo a las rutas
 
 // //Las rutas
