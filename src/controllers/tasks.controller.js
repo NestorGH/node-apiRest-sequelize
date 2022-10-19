@@ -28,13 +28,14 @@ export const getTask = async (req, res) => {
 
 export const createTask = async (req, res) => {
 
-  const { title, completed, todoID } = req.body
+  const { title, completed, todoID, userID } = req.body
 
   try {
     const newTask = await Tasks.create({
       title,
       completed,
-      todoID
+      todoID,
+      userID
     });
 
     res.json(newTask)
