@@ -1,6 +1,7 @@
 //El archivo app tendra la configuacion de express para solo ser ejecutado en el index
 import express from 'express';  //agregar el type: module en el package.json
 import userRoutes from './routes/users.routes.js'
+import todoRoutes from './routes/todos.routes.js'
 // import indexRoutes from './routes/index.routes.js'
 
 const app = express();
@@ -9,7 +10,8 @@ const app = express();
 app.use(express.json()) //Pasar a json los datos para interpretarlos y pasarlo a las rutas
 
 //Las rutas
-app.use(userRoutes)  
+app.use(userRoutes)
+app.use(todoRoutes)  
 // app.use(indexRoutes)  //Verificamos la conexion a la BBDD
 
 

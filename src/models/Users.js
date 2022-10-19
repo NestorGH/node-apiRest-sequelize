@@ -26,22 +26,22 @@ export const Users = sequelize.define('users', {
 
 //Para la tabla Todos le agregamos su fk id_user
 Users.hasMany(Todos, {
-  foreignKey: 'id_user',  //La columna correspondiente a la fk
+  foreignKey: 'userID',  //La columna correspondiente a la fk
   sourceKey: 'id_user'  //ID del modelo Users
 })
 
 Todos.belongsTo(Users, {
-  foreignKey: 'id_user',
+  foreignKey: 'userID',
   targetId: 'id_user'
 })
 
-//Para la tabla Tasks le agregamos su fk id_user
-Users.hasMany(Tasks, {
-  foreignKey: 'id_user',  //La columna correspondiente a la fk
-  sourceKey: 'id_user'  //ID del modelo Users
-})
+// //Para la tabla Tasks le agregamos su fk id_user
+// Users.hasMany(Tasks, {
+//   foreignKey: 'id_user',  //La columna correspondiente a la fk
+//   sourceKey: 'id_user'  //ID del modelo Users
+// })
 
-Tasks.belongsTo(Users, {
-  foreignKey: 'id_user',
-  targetId: 'id_user'
-})
+// Tasks.belongsTo(Users, {
+//   foreignKey: 'id_user',
+//   targetId: 'id_user'
+// })

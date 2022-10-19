@@ -22,12 +22,12 @@ export const Todos = sequelize.define('todos', {
 
 //Para la tabla Task le agregamos sus fk 
 Todos.hasMany(Tasks, {
-  foreignKey: 'id_todo',  //La columna correspondiente a la fk
+  foreignKey: 'todoID',  //La columna correspondiente a la fk
   sourceKey: 'id_todo'  //ID del modelo Todo
 })
 
 Tasks.belongsTo(Todos, {
-  foreignKey: 'id_todo',
+  foreignKey: 'todoID',
   targetId: 'id_todo'
 })
 
